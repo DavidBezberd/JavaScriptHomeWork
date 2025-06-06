@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Popelyshka{
+            constructor(name,age, footsize){
+           this.name = name;
+           this.age = age;
+           this.footsize = footsize;
+            }
+
+        }
+        class Prince{
+            constructor(name, age, foundSlipperSize){
+                this.name = name;
+                this.age = age;
+                this.foundSlipperSize = foundSlipperSize;
+            }
+        }
+       const Popelyshki = [
+           new Popelyshka('Vika', 20, 39),
+           new Popelyshka('Yevheniya', 21, 42),
+           new Popelyshka('Iryna', 22, 41),
+           new Popelyshka('Natalia', 23, 35),
+           new Popelyshka('Victoria', 24, 36),
+           new Popelyshka('Yuliya', 25, 38),
+           new Popelyshka('Elisaveta', 26, 37),
+           new Popelyshka('Valeria', 27, 40),
+           new Popelyshka('Maria', 28, 43),
+           new Popelyshka('Diana', 29, 41),
+        ];
+       const prince =
+        new Prince('Gregory', 19, 38);
+       for (const element of Popelyshki) {
+        if (element.footsize === prince.foundSlipperSize){
+            console.log(element, prince);
+        }
+       };
+       const rightChoice = Popelyshki.find(popelyshka => popelyshka.footsize === prince.foundSlipperSize);
+       console.log(rightChoice);
+       const pop = Popelyshki.map(p => `${p.name}: вік: ${p.age}, розмір ноги: ${p.footsize}`);
+       console.log(pop);
+    </script>
+</body>
+</html>

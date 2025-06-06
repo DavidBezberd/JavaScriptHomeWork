@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addToLocalStorage(arrayName, objToAdd) {
+           const lsItem = localStorage.getItem(arrayName);
+            if(!lsItem){
+                throw new Error(e);
+            }
+            const array = JSON.parse(lsItem);
+            if (typeof objToAdd === 'object'){
+         array.push(objToAdd);
+        }
+        localStorage.setItem(arrayName, JSON.stringify(array));
+        }
+        addToLocalStorage('sessionsList', {});
+    </script>
+</body>
+</html>

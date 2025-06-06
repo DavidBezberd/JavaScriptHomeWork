@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+let courses = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js'],
+        logo: '',
+        price: 0,
+        rating: 5,
+        avgResult: 99
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced'],
+        logo: '',
+        price: 0,
+        rating: 4.998,
+        avgResult: 97
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'python core',
+            'python advanced'],
+        logo: '',
+        price: 0,
+        rating: 4.812,
+        avgResult: 98
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'QA/QC'],
+        logo: '',
+        price: 0,
+        rating: 4.65,
+        avgResult: 97
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java'],
+        logo: '',
+        price: 0,
+        rating: 4.772,
+        avgResult: 100
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass'],
+        logo: '',
+        price: 0,
+        rating: 4.53,
+        avgResult: 90
+    }
+];
+      
+      
+      for (const element of coursesArray) {
+        const div = document.createElement('div');
+        const divForTitle = document.createElement('div');
+        divForTitle.innerText = element.title;
+        div.appendChild(divForTitle);
+        const divForDuration = document.createElement('div');
+        divForDuration.innerText = `Тривалість(місяць): ${element.monthDuration}`;
+        const divForHours = document.createElement('div');
+        divForHours.innerText = `години: ${element.hourDuration}`;
+        div.append(divForDuration, divForHours)
+        const subDiv = document.createElement('div');
+        const divMod1 = document.createElement('div');
+        divMod1.innerText = element.modules[0];
+        const divMod2 = document.createElement('div');
+        divMod2.innerText = element.modules[1];
+        const divMod3 = document.createElement('div');
+        divMod3.innerText = element.modules[2];
+        div.append(divMod1, divMod2, divMod3)
+        const ul = document.createElement('ul');
+        div.appendChild(ul)
+        for (let i = 3; i < element.modules.length; i++) {
+            const li = document.createElement('li');           
+            li.innerText = element.modules[i];
+            ul.appendChild(li);
+        }
+        div.appendChild(subDiv);
+        document.body.appendChild(div);
+      }
+    </script>
+</body>
+</html>

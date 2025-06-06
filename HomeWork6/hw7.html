@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nums = [11,21,3];
+        function sortNums(arrayNums, direction){
+            if (direction === 'ascending') return arrayNums.sort((a, b) => a - b);
+            if (direction === 'descending') return arrayNums.sort((a, b) => b - a);
+          
+        }
+        console.log(sortNums(nums, 'descending'));
+    </script>
+</body>
+</html>

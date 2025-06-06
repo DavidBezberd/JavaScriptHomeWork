@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Виведення користувачів</title>
+</head>
+<body>
+    <script>
+        const renderUsers = (users) => {
+            users.forEach(user => {
+                document.write(`<p>ID: ${user.id}</p>`);
+                document.write(`<p>Ім’я: ${user.name}</p>`);
+                document.write(`<p>Вік: ${user.age}</p>`);
+                document.write('</div>');
+            });
+        };
+
+        const usersArray = [
+            { id: 1, name: 'Давид', age: 19 },
+            { id: 2, name: 'Анна', age: 22 },
+            { id: 3, name: 'Іван', age: 25 }
+        ];
+
+        renderUsers(usersArray);
+    </script>
+</body>
+</html>

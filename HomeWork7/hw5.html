@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                    function Client(id, name, surname , email, phone, products){
+                this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.order = products;
+            }
+
+         function Product(title, price){
+    this.title = title;
+    this.price = price;
+                  }
+
+        const users = [
+            new Client(1, 'Dima', 'Glechik', 'dima@gmail.com', '+38050293813', [new Product('tv', 10000), new Product('phone', 15000),  new Product('phone', 12000)]),
+            new Client(2, 'Vitaly','Golub','Vitaly@gmail.com', '+38127739054', [{title: 'PC', price: 50000}, {title:'keyboard', price: 4000}]),
+            new Client(3, 'Yevhenii', 'Plotnikov','Yevhenii@gmail.com', '+380501458248', [{title: 'videocard', price: 35000}, {title:'phone', price: 8000}]),
+            new Client(4, 'Robert', 'Sewey','Robert@gmail.com', '+6317239759', [new Product('music station', 20000), new Product('phone', 8000)]),
+            new Client(5, 'Jamal', 'Watkins','Jamal@gmail.com', '+9284736573', [{title: 'gaming mouse', price: 6000}, {title:'chair', price: 8700}]),
+            new Client(6, 'Vera', 'Serduchka','Vera@gmail.com', '+38066329231', [new Product('Jeans', 2000), new Product('T-Shirt', 1000), new Product('phone', 4000), new Product('phone', 11000)]),
+            new Client(7, 'Andrii', 'Scryabin','Andrii@gmail.com', '+38099087372', [{title: 'gamepad', price: 3500}, {title:'wheel', price: 20000}]),
+            new Client(8, 'Jason', 'Voorhes', 'Jason@gmail.com','+3805074242', [new Product('headphones', 9000), new Product('monitor', 12000)]),
+            new Client(9, 'Freedy', 'Krooger','Freedy@gmail.com', '+380509123793', [{title: 'cup', price: 300}]),
+            new Client(10, 'Michael', 'Myers', 'Michael@gmail.com','+380501238939', [new Product('microphone', 5000), new Product('watch', 4000), new Product('T-Shirt', 1500)]),
+           ];
+
+
+            const sortedUsers = users.sort((user1, user2) => user1.order.length - user2.order.length);
+
+
+           console.log(sortedUsers);
+    </script>
+</body>
+</html>

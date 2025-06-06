@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(model, dealer, year, maxspeed, engine){
+            this.model = model;
+            this.dealer = dealer;
+            this.year = year;
+            this.maxspeed = maxspeed;
+            this.engine = engine;
+            this.drive = function(){
+                console.log(`їдемо зі швидкістью ${this.maxspeed} км на годину`);
+            }
+            this.info = function(){
+                 for (const key in this) {
+                     console.log(`${key}: ${this[key]}`);       
+                 }
+            };
+                this.increaseMaxSpeed = function(additionalSpeed){
+                   if (maxspeed > 0 || additionalSpeed>0) this.maxspeed = this.maxspeed + additionalSpeed;
+                }
+                this.changeYear = function(newYear){
+                    if (newYear > 1815) this.year = newYear;
+                }
+                this.addDriver = function(driver){
+                  if (driver) this.driver = driver;
+                }
+            }
+        
+        const car = new Car('I8', 'BMW', 2023, 200, 'V8');
+        car.info();
+            car.drive();
+            car.increaseMaxSpeed(200);
+            car.changeYear(2021);
+            car.addDriver('Гоша');
+            car.info();
+    </script>
+</body>
+</html>

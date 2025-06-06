@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const lowestNum = (arr) => {
+          let min = arr[0];
+        for (const num of arr) {
+           if (num < min) min = num;
+  }
+  return min;
+    }
+    console.log(lowestNum([20, 11, 15, 17, 28, 25, 9]));
+   
+    </script>
+</body>
+</html>

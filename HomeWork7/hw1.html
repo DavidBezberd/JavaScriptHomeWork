@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User( id, name, surname , email, phone ){
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.phone = phone;
+        }
+
+        const users = [
+            new User(1, 'Dima', 'Glechik', 'dima@gmail.com', '+38050293813'),
+            new User(2, 'Vitaly','Golub','Vitaly@gmail.com', '+38127739054'),
+            new User(3, 'Yevhenii', 'Plotnikov','Yevhenii@gmail.com', '+380501458248'),
+            new User(4, 'Robert', 'Sewey','Robert@gmail.com', '+6317239759'),
+            new User(5, 'Jamal', 'Watkins','Jamal@gmail.com', '+9284736573'),
+            new User(6, 'Vera', 'Serduchka','Vera@gmail.com', '+38066329231'),
+            new User(7, 'Andrii', 'Scryabin','Andrii@gmail.com', '+38099087372'),
+            new User(8, 'Jason', 'Voorhes', 'Jason@gmail.com','+3805074242'),
+            new User(9, 'Freedy', 'Krooger','Freedy@gmail.com', '+380509123793'),
+            new User(10, 'Michael', 'Myers', 'Michael@gmail.com','+380501238939'),
+
+        ];
+        console.log(users);
+    </script>
+</body>
+</html>

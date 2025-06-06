@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const inp = document.createElement('input');
+        inp.placeholder = 'введіть свій вік';
+        inp.type = 'number';
+        const txt = document.createElement('p');
+        const btn = document.createElement('button');
+        btn.innerText = 'submit';
+        document.body.append(inp, btn,txt);
+        btn.onclick = function(event){
+            const age = Number(inp.value);
+            if (age < 18){
+                txt.innerText = 'Вам менше 18!!!';
+            }
+            else{
+                txt.innerText = 'Доступ дозволено'
+            }
+            console.log(event);
+        };
+    </script>
+</body>
+</html>

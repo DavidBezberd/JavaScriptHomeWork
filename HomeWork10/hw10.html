@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button name="prev">prev</button>
+    <button name="next">next</button>
+    <script>
+        const arr = [];
+        for (let i = 6; i < 200; i += 2) {
+            arr[arr.length] = i;
+        }
+       
+        const mDiv = document.createElement('div');
+        document.body.appendChild(mDiv);
+
+        const prev = document.getElementsByName('prev')[0];
+        const next = document.getElementsByName('next')[0];
+
+        let currentPage = 0;
+        const pageSize = 10;
+
+    
+        function forArr(){
+            mDiv.innerHTML = '';
+                 const start = currentPage * pageSize;
+                 const end = start + pageSize;
+
+                 const itemsToShow = arr.slice(start, end);
+      itemsToShow.forEach(num => {
+        const div = document.createElement('div');
+        div.textContent = num;
+        mDiv.appendChild(div);
+        })
+    }
+        next.addEventListener ('click', function (){
+            if ((currentPage + 1) * pageSize < arr.length) {
+                currentPage++;
+                forArr(); 
+            }
+        });
+      prev.addEventListener ('click', function (){
+        if (currentPage > 0) {
+            currentPage--;
+            forArr();
+      }
+    });
+    </script>
+</body>
+</html>

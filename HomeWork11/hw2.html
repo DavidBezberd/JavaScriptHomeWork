@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let url = new URL('https://dummyjson.com/recipes');
+        fetch(url)
+        .then((recipesObj) => recipesObj.json())
+        .then(recipesObj =>{
+            const {recipes} = recipesObj;  
+
+           for (const recepObj of recipes) {
+            const tagsString = recepObj.tags.map(tag => `"${tag}"`).join(', \n');
+            const instruct = recepObj.instructions.map(instruction => `"${instruction}"`).join(', \n')
+            const mealT = recepObj.mealType.map(typeOfMeal => `"${typeOfMeal}"`).join(', \n')
+               const div = document.createElement('div');
+               div.innerText = 
+               `"id": ${recepObj.id},
+               "name": ${recepObj.name},
+                 "instructions": [
+                 ${instruct}
+           ]
+                   "prepTimeMinutes": ${recepObj.prepTimeMinutes},
+      "cookTimeMinutes": ${recepObj.cookTimeMinutes},
+      "servings": ${recepObj.servings},
+      "difficulty": ${recepObj.difficulty},
+      "cuisine": ${recepObj.cuisine},
+      "caloriesPerServing": ${recepObj.caloriesPerServing},
+      "tags": [
+      ${tagsString}
+      ],
+       "userId": ${recepObj.userId},
+      "rating": ${recepObj.rating},
+      "reviewCount": ${recepObj.reviewCount},
+      "mealType": [
+      ${mealT}
+           ]
+     "ingredients" :
+                `;
+
+                const ol = document.createElement('ol');
+                for (const ingredient of recepObj.ingredients) {
+                const li = document.createElement('li');
+                const ingredientInfo = document.createElement('p');
+                ingredientInfo.innerText = `${ingredient}`;
+                li.appendChild(ingredientInfo);
+                ol.appendChild(li);
+            }
+                const img = document.createElement('img');
+                img.src = recepObj.image;
+                div.appendChild(img);
+            
+            div.append(ol);;
+               document.body.appendChild(div);
+
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="tableGeneratorForm">
+    <input type="number" name="lines">
+    <input type="number" name="cells">
+    <input type="text" name="data">
+    <button>generate</button>
+</form>
+<table id="table"></table>
+    <script>
+     const table = document.getElementById('table');
+
+     const tableGeneratorForm = document.forms.tableGeneratorForm; // or document.forms['tableGeneratorForm']
+
+     tableGeneratorForm.onsubmit = function (e){
+        table.innerText = '';
+         e.preventDefault();
+         const linesValue = +tableGeneratorForm.lines.value;
+         const cellsValue = +tableGeneratorForm.cells.value;
+         const dataValue = tableGeneratorForm.data.value;
+         console.log(linesValue, cellsValue, dataValue);
+
+         for (let i = 0; i < linesValue; i++) {
+            const tr = document.createElement('tr');
+            for (let j = 0; j < cellsValue; j++){
+               const td = document.createElement('td');
+               td.innerText = dataValue;
+               tr.appendChild(td);
+            }
+            table.appendChild(tr);
+         }
+     }
+
+    </script>
+</body>
+</html>

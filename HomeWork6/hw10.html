@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+         const cardSuit = ['spade', 'diamond', 'heart', 'clubs'];
+         const values = ['6', '7', '8','9','10', 'ace','jack','queen','king'];
+         const getColor = (element) => (element === 'diamond' || element === 'heart') ? 'red' : 'black';
+
+        const deck = [];
+        for (const element of cardSuit) {
+            for (const value of values) {
+            deck.push({
+                cardSuit: element,
+                value: value,
+                color: getColor(element)
+            });
+        }
+        }
+        const aceOfSpades = deck.find(card => card.cardSuit === 'spade' && card.value === 'ace');
+
+const allSixes = deck.filter(card => card.value === '6');
+
+const redCards = deck.filter(card => card.color === 'red');
+
+const diamonds = deck.filter(card => card.cardSuit === 'diamond');
+
+const highClubs = deck.filter(card =>
+    card.cardSuit === 'clubs' &&
+    ['9', '10', 'jack', 'queen', 'king', 'ace'].includes(card.value)
+);
+
+console.log(aceOfSpades);
+console.log(allSixes);
+console.log(redCards);
+console.log(diamonds);
+console.log(highClubs);
+
+
+const groupedBySuit = deck.reduce((acc, card) => {
+    acc[card.cardSuit].push(card);
+    return acc;
+}, {
+    spade: [],
+    diamond: [],
+    heart: [],
+    clubs: [] 
+});
+ console.log(groupedBySuit);
+
+    </script>
+</body>
+</html>

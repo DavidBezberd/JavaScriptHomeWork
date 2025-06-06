@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function arrayMinValue(numbers){
+            let min = numbers[0];
+           for (const element of numbers) {
+            if (element < min){
+                min = element;
+            }
+           }
+           return min;
+        }
+        
+        console.log(arrayMinValue([13,5, 145,127, 3]));
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let currentNumber =  +localStorage.getItem('number') || 100;
+
+        let lastUpdate = Number(localStorage.getItem('lastUpdate')) || 0;
+
+        const now = Date.now();
+
+        const secondsPassed = (now - lastUpdate) / 1000;
+
+        if (secondsPassed > 10){
+        currentNumber += 10;
+        localStorage.setItem('number', currentNumber);
+        localStorage.setItem('lastUpdate', now);
+        }
+        
+
+        const div = document.createElement('div');
+        div.innerText = currentNumber + ' ' +'грн';
+        document.body.appendChild(div);
+    
+
+    </script>
+</body>
+</html>

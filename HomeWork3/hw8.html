@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .users-box{
+            display: grid;
+            width: 1000px;
+            grid-template-columns: repeat(2, 1fr) ;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <script src="../users.js"></script>
+
+    <script>
+        document.write(`<div class="users-box">`);
+              for(const user of usersList){
+                document.write(` 
+            <div class="user-block">
+                <h2>ID – ${user.name} – ${user.username} </h2>
+
+                <h3>${user.email} – ${user.phone}</h3>
+
+                <div class="address-block">
+
+                    <p>City – ${user.address.city}</p>
+
+                    <p>Street – ${user.address.street}</p>
+
+                    <p>Suite – ${user.address.suite}</p>
+
+                    <p>Zip code – ${user.address.zipcode}</p>
+                    </div></div>`);
+              }
+              document.write(`</div>`);
+    </script>
+</body>
+</html>

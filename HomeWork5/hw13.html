@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const exchange = (sumUAH, currencyValues, exchangeCurrency) => {
+            const currency = currencyValues.find(c => c.value === exchangeCurrency)
+            if (currency){
+          return sumUAH / currency.currency;
+        }
+        };
+
+        console.log(exchange(10000, [{value: 'USD', currency: 25},{value: 'EUR', currency: 42}], 'EUR'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cloner(obj){
+            if (obj){
+                let functions = [];
+                for (const key in obj) {
+                    if (typeof obj[key] === 'function') {
+                        const functionClone = obj[key].bind({});
+                        functions.push({functionClone, key})
+                    }
+                }
+                console.log(functions);
+            const clonedObj = JSON.parse(JSON.stringify(obj));
+            for (const func of functions) {
+                      clonedObj[func.key] = func.functionClone;
+            }
+            clonedObj[functions[0].key] = functions[0].functionClone;
+            console.log(clonedObj);
+            return clonedObj;
+        }
+        else{
+            throw new Error('!!!!');
+        }
+    }
+
+    cloner({id: 123, name: 'Davod', greeting() {}, foo() {}});
+    </script>
+</body>
+</html>
