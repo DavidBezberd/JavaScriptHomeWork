@@ -8,7 +8,7 @@
 <body>
     <script>
         function addToLocalStorage(arrayName, objToAdd){
-            const lsItem = localStorage.getItem('arrayName');
+            const lsItem = localStorage.getItem(arrayName);
             if (!lsItem){
                 throw new Error('no such array');
             }
